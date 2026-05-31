@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f4ede0;
+  --foreground: #233229;
+  --surface: #fbf7ef;
+  --forest: #2b4a39;
+  --forest-soft: #3c5c49;
+  --anthracite: #344038;
+  --sand: #d7c8af;
+  --olive: #7f8f78;
+  --gold: #a68d62;
+  --border: rgba(43, 74, 57, 0.12);
+  --mobile-phone-cta-height: 56px;
+}
+
+@theme inline {
+  --font-sans: var(--font-manrope);
+  --font-display: var(--font-cormorant);
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-forest: var(--forest);
+  --color-forest-soft: var(--forest-soft);
+  --color-anthracite: var(--anthracite);
+  --color-sand: var(--sand);
+  --color-olive: var(--olive);
+  --color-gold: var(--gold);
+  --color-border-muted: var(--border);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background:
+    radial-gradient(circle at top, rgba(215, 200, 175, 0.46), transparent 38%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.35), transparent 22%),
+    var(--background);
+  color: var(--foreground);
+  font-family: var(--font-manrope), sans-serif;
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.14) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.14) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.2), transparent 78%);
+  opacity: 0.28;
+  z-index: -1;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:where(a, button, input, textarea, select):focus-visible {
+  outline: 2px solid rgba(43, 74, 57, 0.92);
+  outline-offset: 3px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+main {
+  min-width: 0;
+}
+
+::selection {
+  background: rgba(181, 148, 84, 0.22);
+  color: var(--forest);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+@media (max-width: 767px) {
+  body {
+    padding-bottom: calc(
+      var(--mobile-phone-cta-height) + env(safe-area-inset-bottom) + 14px
+    );
+  }
+}
