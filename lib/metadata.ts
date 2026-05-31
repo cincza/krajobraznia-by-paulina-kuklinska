@@ -24,6 +24,9 @@ export function buildMetadata(
     title,
     description,
     metadataBase,
+    verification: {
+      google: "69U4Raw66PDV50_g74_YyPRsU7YYj5CdeKgyuRoZf-g",
+    },
     alternates: {
       canonical,
     },
