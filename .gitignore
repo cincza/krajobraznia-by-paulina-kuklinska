@@ -44,3 +44,5 @@ tmp-projects-contact-sheet.jpg
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+.vercel
